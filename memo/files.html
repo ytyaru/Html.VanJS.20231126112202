@@ -1,0 +1,243 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/vanjs-org/van/public/van-1.2.6.nomodule.min.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', async(event) => {
+    const {h1, table, tbody, thead, td, th, tr, a} = van.tags
+    /*
+    class ByteSize {
+        CRLF = /(\r?\n|\r)/g
+        WHITESPACE = /(\r?\n|\r|\s+)/g;
+        static count(text, options) {
+            options = options || {};
+            options.lineBreaks = options.lineBreaks || 1;
+            options.ignoreWhitespace = options.ignoreWhitespace || false;
+            var length = text.length,
+                nonAscii = length - text.replace(/[\u0100-\uFFFF]/g, '').length,
+                lineBreaks = length - text.replace(this.CRLF, '').length; 
+            return (options.ignoreWhitespace)
+                    ? text.replace(this.WHITESPACE, '').length + nonAscii
+                    : length + nonAscii + Math.max(0, options.lineBreaks * (lineBreaks - 1))
+        }
+        static format(count, plainText) {
+            var level = 0;
+            while (count > 1024) { count /= 1024; level++; }
+            count = Math.round(count*100)/100;
+            level = ['', 'K', 'M', 'G', 'T'][level];
+            return (plainText? count : '<strong>' + count + '</strong>') + ' ' + level + 'B';
+        }
+    }
+    async function size(url) {
+        const res = await fetch(url)
+        const txt = await res.text()
+        return ByteSize.format(ByteSize.count(txt), true)
+    }
+    const miniVanEmsMinSz = await size('https://vanjs.org/code/mini-van-0.5.3.min.js')
+    const miniVanNomMinSz = await size('https://vanjs.org/code/mini-van-0.5.3.nomodule.min.js')
+    const miniVanEmsFullSz = await size('https://vanjs.org/code/mini-van-0.5.3.js')
+    const miniVanNomFullSz = await size('https://vanjs.org/code/mini-van-0.5.3.nomodule.js')
+    const vanEmsMinSz = await size('https://vanjs.org/code/van-1.2.6.min.js')
+    const vanNomMinSz = await size('https://vanjs.org/code/van-1.2.6.nomodule.min.js')
+    const vanEmsFullSz = await size('https://vanjs.org/code/van-1.2.6.js')
+    const vanNomFullSz = await size('https://vanjs.org/code/van-1.2.6.nomodule.js')
+    const vanEmsDebugSz = await size('https://vanjs.org/code/van-1.2.6.debug.js')
+    const vanNomDebugSz = await size('https://vanjs.org/code/van-1.2.6.nomodule.debug.js')
+    const vanxNomMinSz = await size('https://cdn.jsdelivr.net/npm/vanjs-ext@0.1.3/dist/van-x.nomodule.min.js')
+    const vanxNomFullSz = await size('https://cdn.jsdelivr.net/npm/vanjs-ext@0.1.3/dist/van-x.nomodule.js')
+    const vanUiEmsMinSz = await size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.min.js')
+    const vanUiNomMinSz = await size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.nomodule.min.js')
+    const vanUiEmsFullSz = await size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.js')
+    const vanUiNomFullSz = await size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.nomodule.js')
+    */
+    /*
+    const miniVanEmsMinSz = size('https://vanjs.org/code/mini-van-0.5.3.min.js')
+    const miniVanNomMinSz = size('https://vanjs.org/code/mini-van-0.5.3.nomodule.min.js')
+    const miniVanEmsFullSz = size('https://vanjs.org/code/mini-van-0.5.3.js')
+    const miniVanNomFullSz = size('https://vanjs.org/code/van-0.5.3.nomodule.js')
+    const vanEmsMinSz = size('https://vanjs.org/code/van-1.2.6.min.js')
+    const vanNomMinSz = size('https://vanjs.org/code/van-1.2.6.nomodule.min.js')
+    const vanEmsFullSz = size('https://vanjs.org/code/van-1.2.6.js')
+    const vanNomFullSz = size('https://vanjs.org/code/van-1.2.6.nomodule.js')
+    const vanEmsDebugSz = size('https://vanjs.org/code/van-1.2.6.debug.js')
+    const vanNomDebugSz = size('https://vanjs.org/code/van-1.2.6.nomodule.debug.js')
+    const vanxNomMinSz = size('https://cdn.jsdelivr.net/npm/vanjs-ext@0.1.3/dist/van-x.nomodule.min.js')
+    const vanxNomFullSz = size('https://cdn.jsdelivr.net/npm/vanjs-ext@0.1.3/dist/van-x.nomodule.js')
+    const vanUiEmsMinSz = size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.min.js')
+    const vanUiNomMinSz = size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.nomodule.min.js')
+    const vanUiEmsFullSz = size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.js')
+    const vanUiNomFullSz = size('https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.nomodule.js')
+    await Promise.all([miniVanEmsMinSz, miniVanNomMinSz, miniVanEmsFullSz , miniVanNomFullSz , 
+        vanEmsMinSz, vanNomMinSz , vanEmsFullSz , vanNomFullSz , vanEmsDebugSz , vanNomDebugSz ,
+        vanxNomMinSz , vanxNomFullSz , 
+        vanUiEmsMinSz , vanUiNomMinSz , vanUiEmsFullSz , vanUiNomFullSz])
+    */
+    const [
+        miniVanEmsMinSz,
+        miniVanNomMinSz,
+        miniVanEmsFullSz ,
+        miniVanNomFullSz ,
+        vanEmsMinSz,
+        vanNomMinSz ,
+        vanEmsFullSz ,
+        vanNomFullSz ,
+        vanEmsDebugSz ,
+        vanNomDebugSz ,
+        vanxNomMinSz ,
+        vanxNomFullSz ,
+        vanUiEmsMinSz ,
+        vanUiNomMinSz ,
+        vanUiEmsFullSz ,
+        vanUiNomFullSz ,
+    ] = [
+        '769 B',
+        '788 B',
+        '1.79 KB',
+        '1.67 KB',
+        '1.69 KB',
+        '1.73 KB',
+        '4.37 KB',
+        '4.63 KB',
+        '4.53 KB',
+        '9.17 KB',
+        '1.76 KB',
+        '4.43 KB',
+        '10.95 KB',
+        '9.81 KB',
+        '18.7 KB',
+        '19.47 KB',
+    ]
+    const FixedTable = ()=>table({border:1, style:`border:1px solid black; border-collapse:collapse;`},
+        tr(
+            th({rowspan:2}, '種類'), 
+            th({colspan:2, title:''}, 'ES Module'), 
+            th({colspan:2}, 'no-module'), 
+            th({rowspan:2}, '版'),
+            th({rowspan:2}, '概要')),
+        tr([...Array(2)].map(()=>['構成','サイズ'].map(t=>th(t))).flat()),
+        tr(
+            th({rowspan:2}, a({href:'https://vanjs.org/minivan#download-table'}, 'mini-van')), 
+            td(a({href:'https://vanjs.org/code/mini-van-0.5.3.min.js'}, 'min')),
+            //td((await size('https://vanjs.org/code/mini-van-0.5.3.min.js'))),
+            td({style:`text-align:right;`}, miniVanEmsMinSz),
+            //td((await size('https://vanjs.org/code/mini-van-0.5.3.nomodule.min.js'))),
+            td({style:`text-align:right;`}, miniVanNomMinSz),
+            td(a({href:'https://vanjs.org/code/mini-van-0.5.3.nomodule.min.js'}, 'min')),
+            td({rowspan:2}, '0.5.3'),
+            td({rowspan:2}, '軽量版(リアクティブ機能なし)'),
+        ),
+        tr(
+            td(a({href:'https://vanjs.org/code/mini-van-0.5.3.js'}, 'plain')),
+            td({style:`text-align:right;`}, miniVanEmsFullSz),
+            td({style:`text-align:right;`}, miniVanNomFullSz),
+            td(a({href:'https://vanjs.org/code/mini-van-0.5.3.nomodule.js'}, 'plain')),
+        ),
+        tr(
+            th({rowspan:3}, a({href:'https://vanjs.org/start#download-table'}, 'van')), 
+            td(a({href:'https://vanjs.org/code/van-1.2.6.min.js'}, 'min')),
+            td({style:`text-align:right;`}, vanEmsMinSz),
+            td({style:`text-align:right;`}, vanNomMinSz),
+            td(a({href:'https://vanjs.org/code/van-1.2.6.nomodule.min.js'}, 'min')),
+            td({rowspan:3}, '1.2.6'),
+            td({rowspan:3}, '通常版'),
+        ),
+        tr(
+            td(a({href:'https://vanjs.org/code/van-1.2.6.js'}, 'plain')),
+            td({style:`text-align:right;`}, vanEmsFullSz),
+            td({style:`text-align:right;`}, vanNomFullSz),
+            td(a({href:'https://vanjs.org/code/van-1.2.6.nomodule.js'}, 'plain')),
+        ),
+        tr(
+            td(a({href:'https://vanjs.org/code/van-1.2.6.debug.js'}, 'debug')),
+            td({style:`text-align:right;`}, vanEmsDebugSz),
+            td({style:`text-align:right;`}, vanNomDebugSz),
+            td(a({href:'https://vanjs.org/code/van-1.2.6.nomodule.debug.js'}, 'debug')),
+        ),
+        tr(
+            th({rowspan:2}, a({href:''}, 'van-x')), 
+            td(),
+            td({style:`text-align:right;`}, ),
+            td({style:`text-align:right;`}, vanxNomMinSz),
+            td(a({href:'https://cdn.jsdelivr.net/npm/vanjs-ext@0.1.3/dist/van-x.nomodule.min.js'}, 'min')),
+            td({rowspan:2}, '0.1.3'),
+            td({rowspan:2}, '拡張機能(クラスをリアクティブ化等)'),
+        ),
+        tr(
+            td(),
+            td({style:`text-align:right;`}, ),
+            td({style:`text-align:right;`}, vanxNomFullSz),
+            td(a({href:'https://cdn.jsdelivr.net/npm/vanjs-ext@0.1.3/dist/van-x.nomodule.js'}, 'plain')),
+        ),
+        tr(
+            th({rowspan:2}, a({href:''}, 'van-ui')), 
+            td(a({href:'https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.min.js'}, 'min')),
+            td({style:`text-align:right;`}, vanUiEmsMinSz),
+            td({style:`text-align:right;`}, vanUiNomMinSz),
+            td(a({href:'https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.nomodule.min.js'}, 'min')),
+            td({rowspan:2}, '0.10.0'),
+            td({rowspan:2}, 'UIコンポーネント'),
+        ),
+        tr(
+            td(a({href:'https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.js'}, 'plain')),
+            td({style:`text-align:right;`}, vanUiEmsFullSz),
+            td({style:`text-align:right;`}, vanUiNomFullSz),
+            td(a({href:'https://cdn.jsdelivr.net/npm/vanjs-ui@0.10.0/dist/van-ui.nomodule.js'}, 'plain')),
+        ),
+    )
+    van.add(document.body, h1(a({href:'https://vanjs.org/'}, 'VanJS'), 'ファイル一覧'))
+    van.add(document.body, FixedTable())
+    /*
+    const Table = ({urls})=>table(
+        tr(th({rowspan:2}, '種類'), th({colspan:2}, 'ems'), th({colspan:2}, 'no-module')),
+        tr([...Array(2)].map(()=>['構成','サイズ'].map(t=>th(t))).flat()),
+//        tr(th('構成'), th('サイズ'), ),
+
+//        ['構成','サイズ'].map(t=>th(t))
+    )
+
+    const data = new Map()
+    for (let url of urls) {
+        const [kind, version, name] = url.split('/')
+        if (!data.has(kind)) { data.set(kind, [{'version':version, 'name':name}]); continue; }
+        const list = data.get(kind)
+        list.push({'version':version, 'name':name})
+
+
+        const [kind, version, name] = url.split('/')
+        if (!data.has(kind)) { data.set(kind, {'ems':{'version':version, 'name':name, 'size':0}, 'nomodule':{}}); continue; }
+
+//        data.get(kind)['ems'].name    // min, full, debug
+//        data.get(kind)['ems'].version // 1.2.6
+//        data.get(kind)['ems'].size    // 0.9KB
+//        data.get(kind)['ems'].path    // mini-van/0.5.3/ems.min.js
+//        data.get(kind)['nomodule'].name    // min, full, debug
+//        data.get(kind)['nomodule'].version // 1.2.6
+//        data.get(kind)['nomodule'].size    // 0.9KB
+//        data.get(kind)['nomodule'].path    // mini-van/0.5.3/nomodule.min.js
+
+//        tr(th(kind), td(a({href:ems.path}, ems.name)), td(ems.size), td(a({href:ems.path}, ems.name)), td(nom.size))
+//        tr(td(), td(), td(), td())
+    }
+    tr(th(), td(), td(), td(), td())
+ 
+    van.add(document.body, Table({urls:[
+        'mini-van/0.5.3/nomodule.js',
+        'mini-van/0.5.3/nomodule.min.js',
+        'mini-van/0.5.3/esm.js',
+        'mini-van/0.5.3/esm.min.js',
+        'van/1.2.6/nomodule.debug.js',
+        'van/1.2.6/nomodule.js',
+        'van/1.2.6/nomodule.min.js',
+        'van/1.2.6/esm.debug.js',
+        'van/1.2.6/esm.min.js',
+        'van/1.2.6/esm.js',
+        'van-x/0.1.3/nomodule.js',
+        'van-x/0.1.3/nomodule.min.js',
+        'van-ui/0.10.0/esm.min.js',
+        'van-ui/0.10.0/esm.js',
+        'van-ui/0.10.0/nomodule.js',
+        'van-ui/0.10.0/nomodule.min.js',
+    ]}))
+    */
+});
+window.addEventListener('beforeunload', (event) => {
+    console.log('beforeunload!!');
+});
+</script>
